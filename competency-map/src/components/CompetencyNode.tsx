@@ -31,6 +31,10 @@ export const CompetencyNode = ({
     <motion.button
       type="button"
       className="flex h-28 w-28 items-center justify-center rounded-full border border-gold bg-white/90 text-center text-sm font-semibold text-ebony shadow-sm transition-colors sm:h-32 sm:w-32 sm:text-base focus:outline-none focus-visible:ring-4 focus-visible:ring-accent-blue/40"
+      style={{
+        transformOrigin: 'center center',
+        willChange: 'transform'
+      }}
       variants={nodeVariants}
       initial="rest"
       animate={isActive ? "active" : "rest"}

@@ -32,8 +32,13 @@ export const RadialMap = ({ activeId, onSelect }: RadialMapProps) => {
         return (
           <motion.div
             key={competency.id}
-            className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center"
-            style={{ x, y }}
+            className="absolute left-1/2 top-1/2 flex h-32 w-32 -translate-x-1/2 -translate-y-1/2 items-center justify-center sm:h-36 sm:w-36"
+            style={{ 
+              x, 
+              y,
+              transformOrigin: 'center center',
+              willChange: 'transform'
+            }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={nodeWrapperTransition}
