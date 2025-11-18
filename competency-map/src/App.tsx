@@ -20,24 +20,26 @@ const App = () => {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col items-center gap-12 px-6 py-12 md:flex-row md:items-start md:gap-16 md:px-12 lg:py-20">
-        <section className="flex w-full max-w-xl flex-col items-center text-center md:items-start md:text-left">
+      <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col items-center gap-12 px-6 py-12 md:gap-16 md:px-12 lg:py-20">
+        <section className="flex w-full flex-col items-center text-center">
           <h1 className="text-3xl font-semibold tracking-tight text-ebony md:text-4xl">
             Interactive Competency Map
           </h1>
-          <p className="mt-4 text-lg leading-relaxed text-ebony/75">
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ebony/75">
             Explore the core learning competencies. Select a node to uncover
             focus areas and behavioral examples that support growth.
           </p>
         </section>
-        <div className="flex w-full flex-col items-center gap-12 md:flex-row md:items-start md:gap-14">
-          <RadialMap
-            activeId={selectedCompetency?.id ?? null}
-            onSelect={handleSelect}
-          />
-          <div className="relative flex w-full max-w-md justify-center">
+        <div className="flex w-full flex-col items-center gap-12 md:flex-row md:items-start md:gap-8">
+          <div className="flex w-full flex-1 items-center justify-center md:w-1/2">
+            <RadialMap
+              activeId={selectedCompetency?.id ?? null}
+              onSelect={handleSelect}
+            />
+          </div>
+          <div className="relative flex w-full flex-1 items-center justify-center md:w-1/2">
             <div
-              className={`hidden w-full max-w-md rounded-3xl border border-gold/40 bg-white/95 p-8 text-left text-base text-ebony/70 shadow-xl transition-opacity duration-300 ease-out md:flex md:flex-col ${placeholderVisibility}`}
+              className={`hidden w-full rounded-3xl border border-gold/40 bg-white/95 p-8 text-left text-base text-ebony/70 shadow-xl transition-opacity duration-300 ease-out md:flex md:flex-col ${placeholderVisibility}`}
               aria-hidden={Boolean(selectedCompetency)}
             >
               <div className="space-y-3 text-left">
