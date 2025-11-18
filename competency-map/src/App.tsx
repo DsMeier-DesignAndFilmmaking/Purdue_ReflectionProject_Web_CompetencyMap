@@ -35,9 +35,9 @@ const App = () => {
             activeId={selectedCompetency?.id ?? null}
             onSelect={handleSelect}
           />
-          <div className="relative flex w-full max-w-md justify-center">
+          <div className="relative flex w-full max-w-md justify-center md:min-h-[400px]">
             <div
-              className={`hidden w-full max-w-md rounded-3xl border border-gold/40 bg-white/85 p-8 text-left text-base text-ebony/70 shadow-xl transition-opacity duration-300 ease-out md:flex md:flex-col ${placeholderVisibility}`}
+              className={`hidden w-full max-w-md rounded-3xl border border-gold/40 bg-white/95 p-8 text-left text-base text-ebony/70 shadow-xl transition-opacity duration-300 ease-out md:flex md:flex-col md:absolute md:inset-0 ${placeholderVisibility}`}
               aria-hidden={Boolean(selectedCompetency)}
             >
               <div className="space-y-3 text-left">
